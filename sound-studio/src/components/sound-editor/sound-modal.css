@@ -1,0 +1,135 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: rgba(31, 27, 22, 0.38);
+}
+
+.modal {
+    width: min(440px, 100%);
+    padding: 20px;
+    border-radius: 12px;
+    background: var(--surface, #fdfbf7);
+    color: var(--ink, #1f1b16);
+    box-shadow: 0 18px 50px rgba(31, 27, 22, 0.22);
+    font-family: var(--font-sans, sans-serif);
+}
+
+.title {
+    margin: 0 0 16px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.description {
+    margin: -8px 0 16px;
+    color: var(--muted, #7b7266);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.field {
+    margin-bottom: 16px;
+}
+
+.field-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.value {
+    color: var(--accent, #855cd6);
+    font-variant-numeric: tabular-nums;
+}
+
+.range {
+    width: 100%;
+    accent-color: var(--accent, #855cd6);
+}
+
+.hint {
+    margin-top: 6px;
+    color: var(--muted, #7b7266);
+    font-size: 11px;
+    line-height: 1.45;
+}
+
+.choice-row {
+    display: flex;
+    gap: 14px;
+    margin-top: 4px;
+}
+
+.choice {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+}
+
+.select {
+    width: 100%;
+    padding: 7px 9px;
+    border: 1px solid var(--border, rgba(31, 27, 22, 0.15));
+    border-radius: 6px;
+    background: #fff;
+    color: var(--ink, #1f1b16);
+    font: inherit;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 22px;
+}
+
+.button {
+    padding: 8px 16px;
+    border: 1px solid var(--border, rgba(31, 27, 22, 0.15));
+    border-radius: 7px;
+    background: var(--surface, #fdfbf7);
+    color: var(--ink, #1f1b16);
+    font: inherit;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: var(--raised, #efe9df);
+}
+
+.primary {
+    border-color: var(--accent, #855cd6);
+    background: var(--accent, #855cd6);
+    color: #fff;
+}
+
+.primary:hover {
+    background: var(--accent-hover, #7449c4);
+}
+
+.preview {
+    margin-right: auto;
+    border-color: var(--accent, #855cd6);
+    color: var(--accent, #855cd6);
+    background: var(--accent-soft, #efe8ff);
+}
+
+.error {
+    margin-top: 10px;
+    color: #b91c1c;
+    font-size: 12px;
+}

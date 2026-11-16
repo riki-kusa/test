@@ -1,0 +1,26 @@
+Sound Studio
+Copyright (C) 2026 Sound Studio contributors
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU Affero General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option) any
+later version. See LICENSE for the full text.
+
+This program incorporates source code and assets derived from scratch-gui
+(https://github.com/scratchfoundation/scratch-gui), Copyright (c) Scratch
+Foundation, licensed under the GNU Affero General Public License v3.0. The
+sound editor UI, waveform, audio trimmer, form controls, and audio effect
+implementations under src/components and src/lib/audio originate from that
+project.
+
+This program also incorporates source code and assets derived from PenguinMod
+(https://github.com/PenguinMod/penguinmod.github.io), Copyright (c) PenguinMod
+contributors, licensed under the GNU General Public License v3.0. The low pass
+and high pass effects, echo effect, copy-to-new sound action, pitch/volume
+modify modal, sample-rate format modal, and the associated sound editor UI
+buttons and icons originate from that project. PenguinMod's GPL-3.0 code is
+combined with this AGPL-3.0 program under the AGPL-3.0 terms.
+
+Scratch is a trademark of the Scratch Foundation. Sound Studio is an
+unofficial tool and is not affiliated with or endorsed by the Scratch
+Foundation or PenguinMod.

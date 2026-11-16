@@ -1,0 +1,30 @@
+const messages = {
+    'gui.soundEditor.sound': '音',
+    'gui.soundEditor.play': '再生',
+    'gui.soundEditor.stop': '停止',
+    'gui.soundEditor.copy': 'コピー',
+    'gui.soundEditor.paste': '貼り付け',
+    'gui.soundEditor.copyToNew': '別サウンドとしてコピー',
+    'gui.soundEditor.delete': '削除',
+    'gui.soundEditor.save': '保存',
+    'gui.soundEditor.undo': '元に戻す',
+    'gui.soundEditor.redo': 'やり直す',
+    'gui.soundEditor.faster': '速く',
+    'gui.soundEditor.slower': '遅く',
+    'gui.soundEditor.echo': 'エコー',
+    'gui.soundEditor.robot': 'ロボット',
+    'gui.soundEditor.louder': '大きく',
+    'gui.soundEditor.softer': '小さく',
+    'gui.soundEditor.reverse': '逆再生',
+    'gui.soundEditor.fadeOut': 'フェードアウト',
+    'gui.soundEditor.fadeIn': 'フェードイン',
+    'gui.soundEditor.mute': '無音',
+    'pm.soundEditor.lowPass': 'ローパス',
+    'pm.soundEditor.highPass': 'ハイパス',
+    'pm.soundEditor.format': 'フォーマット',
+    'pm.soundEditor.modify': '調整',
+    'tw.stereo': 'ステレオ',
+    'tw.mono': 'モノラル'
+};
+
+export default messages;

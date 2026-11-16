@@ -1,0 +1,409 @@
+:root {
+    --bg: #f7f4ee;
+    --surface: #fdfbf7;
+    --raised: #efe9df;
+    --ink: #1f1b16;
+    --secondary: #5e554a;
+    --muted: #7b7266;
+    --border: rgba(31, 27, 22, 0.08);
+    --accent: #855cd6;
+    --accent-hover: #7449c4;
+    --accent-soft: #efe8ff;
+    --danger: #dc2626;
+    --shadow-sm: 0 1px 2px rgba(31, 27, 22, 0.06);
+    --shadow-float: 0 8px 24px rgba(31, 27, 22, 0.08);
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans",
+        "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
+    position: relative;
+}
+
+.appbar {
+    align-items: center;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex: 0 0 auto;
+    gap: 16px;
+    padding: 12px 16px;
+    position: relative;
+    z-index: 20;
+}
+
+.brand {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 8px;
+    min-width: 0;
+}
+
+.brand-mark {
+    align-items: center;
+    background: var(--ink);
+    border-radius: 8px;
+    color: var(--surface);
+    display: grid;
+    flex: none;
+    height: 32px;
+    place-items: center;
+    width: 32px;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.brand-name {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.brand-tagline {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+.appbar-actions {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.sound-picker {
+    align-items: center;
+    display: flex;
+    flex: 0 1 auto;
+    gap: 6px;
+    min-width: 0;
+}
+
+.sound-picker-label {
+    color: var(--muted);
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.sound-picker select {
+    max-width: 180px;
+    min-width: 90px;
+    padding: 7px 9px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: var(--surface);
+    color: var(--ink);
+    font: inherit;
+    font-size: 12px;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 720px) {
+    .appbar {
+        flex-wrap: wrap;
+    }
+
+    .appbar-actions {
+        flex-wrap: wrap;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .sound-picker {
+        flex: 1 1 90px;
+        min-width: 0;
+    }
+
+    .sound-picker-label {
+        display: none;
+    }
+
+    .sound-picker select {
+        max-width: none;
+        min-width: 0;
+        width: 100%;
+    }
+}
+
+
+.button {
+    align-items: center;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 13px;
+    font-weight: 500;
+    gap: 8px;
+    height: 36px;
+    justify-content: center;
+    padding: 0 12px;
+    transition: background-color 150ms var(--ease), border-color 150ms var(--ease),
+        color 150ms var(--ease), transform 150ms var(--ease);
+    white-space: nowrap;
+}
+
+.button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.button:not(:disabled):active {
+    transform: scale(0.98);
+}
+
+.button-ghost {
+    background: var(--surface);
+    border-color: var(--border);
+    color: var(--ink);
+}
+
+.button-ghost:hover:not(:disabled) {
+    background: var(--raised);
+}
+
+.button-primary {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--surface);
+}
+
+.button-primary:hover:not(:disabled) {
+    background: #342d25;
+}
+
+.app-menu {
+    position: relative;
+}
+
+.app-menu-trigger {
+    gap: 7px;
+}
+
+.app-menu-chevron {
+    margin-left: 1px;
+    opacity: 0.7;
+}
+
+.app-menu-popover {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow-float);
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 210px;
+    padding: 5px;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 7px);
+    z-index: 80;
+}
+
+.app-menu-item {
+    align-items: center;
+    background: transparent;
+    border: 0;
+    border-radius: 8px;
+    color: var(--ink);
+    cursor: pointer;
+    display: flex;
+    font: inherit;
+    gap: 10px;
+    min-height: 36px;
+    padding: 7px 9px;
+    text-align: left;
+    width: 100%;
+}
+
+.app-menu-item:hover:not(:disabled),
+.app-menu-item:focus-visible {
+    background: var(--raised);
+}
+
+.app-menu-item:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+}
+
+.app-menu-item.is-destructive {
+    color: var(--danger);
+}
+
+.app-menu-item.is-destructive:hover:not(:disabled),
+.app-menu-item.is-destructive:focus-visible {
+    background: rgba(220, 38, 38, 0.08);
+}
+
+.app-menu-item-icon,
+.app-menu-item-icon-spacer {
+    flex: none;
+    height: 16px;
+    width: 16px;
+}
+
+.app-menu-item-icon-spacer {
+    display: inline-block;
+}
+
+.app-menu-divider {
+    background: var(--border);
+    height: 1px;
+    margin: 3px 5px;
+}
+
+.editor-shell {
+    align-items: stretch;
+    display: flex;
+    flex: 1 1 auto;
+    width: 100%;
+}
+
+.editor-card {
+    background: var(--surface);
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    max-width: none;
+    min-width: 0;
+    overflow-x: auto;
+    width: 100%;
+}
+
+.sound-editor-host {
+    display: flex;
+    flex-direction: column;
+    min-height: 360px;
+}
+
+.sound-editor-host > * {
+    flex-grow: 1;
+}
+
+.drop-overlay {
+    align-items: center;
+    background: rgba(247, 244, 238, 0.86);
+    border: 2px dashed var(--accent);
+    border-radius: 16px;
+    bottom: 16px;
+    display: flex;
+    justify-content: center;
+    left: 16px;
+    pointer-events: none;
+    position: fixed;
+    right: 16px;
+    top: 16px;
+    z-index: 60;
+}
+
+.drop-message {
+    background: var(--ink);
+    border-radius: 999px;
+    color: var(--surface);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 18px;
+}
+
+.toast {
+    align-items: flex-start;
+    background: #2b2119;
+    border-radius: 10px;
+    bottom: 20px;
+    box-shadow: var(--shadow-float);
+    color: #fff;
+    display: flex;
+    font-size: 13px;
+    gap: 12px;
+    left: 50%;
+    max-width: min(92vw, 560px);
+    padding: 12px 14px;
+    position: fixed;
+    transform: translateX(-50%);
+    z-index: 90;
+}
+
+.toast-close {
+    background: transparent;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    padding: 0 2px;
+}
+
+@media (max-width: 720px) {
+    .brand-tagline {
+        display: none;
+    }
+
+    .appbar {
+        gap: 8px;
+        padding: 8px 12px;
+    }
+
+    .appbar-actions {
+        gap: 4px;
+    }
+
+    .button {
+        padding: 0 9px;
+    }
+
+    .sound-editor-host {
+        min-height: 0;
+    }
+}
+
+@media (max-width: 420px) {
+    .brand-name {
+        font-size: 14px;
+    }
+
+    .brand-mark {
+        height: 28px;
+        width: 28px;
+    }
+}
